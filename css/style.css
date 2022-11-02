@@ -1,0 +1,282 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main{
+    padding-top: 0;
+    overflow: hidden;
+}
+.main>.container{
+    max-width:100%;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.text-right{
+    text-align: right;
+}
+
+.catalog-by-header{
+    background-image: url("../img/header-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.catalog-by-header__body{
+    position: relative;
+    max-width: 728px;
+    margin: 0 auto;
+    padding: 80px 0 123px;
+}
+.catalog-by-header__content{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    max-width: 458px;
+    position: relative;
+    z-index: 10;
+}
+.catalog-by-header__content p{
+    margin: 0;
+}
+.catalog-by-header__title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+    color: #000000;
+    margin: 0 0 13px;
+    text-align: center;
+}
+.catalog-by-header__logo{
+    background-image: url("../img/logo-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 390px;
+    height: 342px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    right: -28%;
+}
+.catalog-by-header__logo img{
+    margin: -49px 0 0 -13px;
+}
+
+
+.catalog-by-text{
+    padding-top: 60px;
+    position: relative;
+    margin-bottom: 171px;
+}
+.catalog-by-text:after{
+    content: '';
+    position: relative;
+    display: block;
+    background-image: url("../img/text-bottom-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 87px;
+    margin: 42px auto 0;
+}
+.catalog-by-text__body{
+    max-width: 728px;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+.catalog-by-text__body p{
+    margin: 0 0 29px;
+}
+
+.catalog-by-items{
+}
+.catalog-by-items:after{
+    content: '';
+    position: relative;
+    display: block;
+    background-image: url("../img/footer-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 213px;
+    margin: 383px auto 0;
+}
+.catalog-by-items__body{
+    max-width: 1110px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+}
+.catalog-by-items__item{
+    background-image: url("../img/item-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 377px;
+    height: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 124px;
+    padding-bottom: 50px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+.catalog-by-items__img{
+    transition: all .3s ease;
+}
+.catalog-by-items__item:nth-of-type(3n+2){
+    top: 248px;
+}
+.catalog-by-items__img:hover{
+    transform: scale(1.2);
+    transition: all .3s ease;
+}
+.catalog-by-items__name{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+@media (max-width: 767px) {
+    .catalog-by-header{
+        background-image: url("../img/header-bg-mobile.svg");
+        background-size: cover;
+    }
+    .catalog-by-header__body{
+        max-width: 100%;
+        padding: 55px 32px 36px;
+    }
+    .catalog-by-header__content{
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        max-width: 100%;
+    }
+    .catalog-by-header__title{
+        font-size: 32px;
+        line-height: 39px;
+        margin: 0 0 38px;
+        text-align: left;
+    }
+    .catalog-by-header__logo{
+        background-image: url("../img/logo-bg-mobile.svg");
+        width: 161px;
+        height: 162px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 31px;
+    }
+    .catalog-by-header__logo img{
+        margin: -15px 0 0 22px;
+    }
+
+
+    .catalog-by-text{
+        padding-top: 23px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .catalog-by-text:after{
+        content: '';
+        position: relative;
+        display: block;
+        background-image: url("../img/text-bottom-bg-mobile.png");
+        height: 81px;
+        margin: 18px auto 0;
+    }
+    .catalog-by-text__body{
+        font-size: 14px;
+        line-height: 17px;
+        padding: 0 32px;
+    }
+    .catalog-by-text__body p{
+        margin: 0 0 16px;
+    }
+
+
+    .catalog-by-items:after{
+        background-image: url("../img/footer-bg-mobile.png");
+        width: 100%;
+        height: 81px;
+        margin: 57px auto 0;
+    }
+    .catalog-by-items__body{
+        margin: 0 -20px;
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+    }
+    .catalog-by-items__item{
+        width: 232px;
+        height: 245px;
+        margin-bottom: 26px;
+        padding-bottom: 35px;
+    }
+    .catalog-by-items__img{
+        transition: all .3s ease;
+        max-height: 100%;
+    }
+    .catalog-by-items__img img{
+        object-fit: contain;
+        display: block;
+        max-height: 100%;
+    }
+    .catalog-by-items__item:nth-of-type(3n+2){
+        top: 0;
+    }
+    .catalog-by-items__item:nth-of-type(even){
+        top: 124px;
+    }
+    .catalog-by-items__name{
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
