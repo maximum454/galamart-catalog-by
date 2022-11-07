@@ -186,7 +186,11 @@
     max-width: 65%;
     margin: 0 auto;
 }
-
+@media (min-width: 1410px){
+    .catalog-by-header{
+        padding-bottom: 120px;
+    }
+}
 @media (max-width: 767px) {
     .catalog-by-header{
         background-image: url("../img/header-bg-mobile.svg");
