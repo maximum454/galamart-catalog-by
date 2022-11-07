@@ -183,6 +183,8 @@
     text-align: center;
     text-transform: uppercase;
     color: #000000;
+    max-width: 65%;
+    margin: 0 auto;
 }
 
 @media (max-width: 767px) {

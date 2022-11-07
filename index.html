@@ -33,64 +33,99 @@
     </div>
     <div class="catalog-by-items">
         <div class="catalog-by-items__body">
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/elektronika-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-1.png" width="191" height="286" alt="">
+                    <img class="img-fluid" src="./img/item-1.png" width="191" height="255" alt="">
                 </div>
                 <div class="catalog-by-items__name">электроника</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/posuda-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-2.png" width="367" height="286" alt="">
+                    <img class="img-fluid" src="./img/item-2.png" width="359" height="286" alt="">
                 </div>
                 <div class="catalog-by-items__name">Посуда</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/tovary-dlya-detey-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-3.png" width="476" height="476" alt="">
+                    <img class="img-fluid" src="./img/item-3.png" width="176" height="333" alt="">
                 </div>
                 <div class="catalog-by-items__name">Товары для детей</div>
             </a>
 
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/kantstovary-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-4.png" width="401" height="286" alt="">
+                    <img class="img-fluid" src="./img/item-4.png" width="375" height="272" alt="">
                 </div>
                 <div class="catalog-by-items__name">Канцтовары</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/krasota-i-zdorove-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-5.png" width="328" height="255" alt="">
+                    <img class="img-fluid" src="./img/item-5.png" width="316" height="231" alt="">
                 </div>
-                <div class="catalog-by-items__name">Красота и здоровье</div>
+                <div class="catalog-by-items__name">Красота и&nbsp; здоровье</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/sport-i-otdykh-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-6.png" width="412" height="288" alt="">
+                    <img class="img-fluid" src="./img/item-6.png" width="360" height="306" alt="">
                 </div>
                 <div class="catalog-by-items__name">Спорт и отдых</div>
             </a>
 
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/tovary-dlya-doma-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-7.png" width="331" height="302" alt="">
+                    <img class="img-fluid" src="./img/item-7.png" width="271" height="302" alt="">
                 </div>
                 <div class="catalog-by-items__name">Товары для дома</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/odezhda-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-8.png" width="351" height="336" alt="">
+                    <img class="img-fluid" src="./img/item-8.png" width="331" height="328" alt="">
                 </div>
                 <div class="catalog-by-items__name">Одежда</div>
             </a>
-            <a href="#" class="catalog-by-items__item">
+            <a href="https://galamart.ru/collections/napitki-i-eda-by/" target="_blank" class="catalog-by-items__item">
                 <div class="catalog-by-items__img">
-                    <img class="img-fluid" src="./img/item-9.png" width="384" height="384" alt="">
+                    <img class="img-fluid" src="./img/item-9.png" width="189" height="319" alt="">
                 </div>
                 <div class="catalog-by-items__name">Напитки и еда</div>
             </a>
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script>
+    function animateFrom(elem, direction) {
+        direction = direction || 1;
+        elem.style.opacity = "0";
+        gsap.fromTo(elem, {autoAlpha: 0}, {
+            duration: 1.25,
+            autoAlpha: 1,
+            ease: "ease",
+            overwrite: "auto"
+        });
+    }
+
+    function hide(elem) {
+        gsap.set(elem, {autoAlpha: 0});
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let item = document.querySelectorAll('.catalog-by-items__item');
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(item).forEach(function(elem) {
+            hide(elem); // assure that the element is hidden when scrolled into view
+
+            ScrollTrigger.create({
+                trigger: elem,
+                scrub: 1,
+                onEnter: function() { animateFrom(elem) },
+                onEnterBack: function() { animateFrom(elem, -1) },
+                onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+            });
+        });
+    });
+</script>
 </body>
 </html>
